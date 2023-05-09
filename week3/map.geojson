@@ -6,7 +6,8 @@
         "properties": {
           "K-Food": "Yigah Restaurant",
           "Best Menu": "Pork Cutlet (Korean style)",
-          "color": "red"
+          "color": "red",
+          "region": "OC"
         },
         "geometry": {
           "coordinates": [
@@ -21,7 +22,8 @@
         "properties": {
           "K-Food": "Dada Shabu Shabu",
           "Best Menu": "All You Can Eat!",
-          "color": "red"
+          "color": "red",
+          "region": "OC"
         },
         "geometry": {
           "coordinates": [
@@ -37,7 +39,8 @@
         "properties": {
           "K-Food": "Hangari Kalguksoo",
           "Best Menu": "Bossam",
-          "color": "red"
+          "color": "red",
+          "region": "LA"
         },
         "geometry": {
           "coordinates": [
@@ -52,7 +55,8 @@
         "properties": {
           "K-Food": "Soowon Galbi",
           "Best Menu": "Galbi and Cold Noodle",
-          "color": "red"
+          "color": "red",
+          "region": "LA"
         },
         "geometry": {
           "coordinates": [
