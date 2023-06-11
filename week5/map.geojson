@@ -1,0 +1,70 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "K-Food": "Yigah Restaurant",
+          "Best Menu": "Pork Cutlet (Korean style)",
+          "color": "red",
+          "region": "OC"
+        },
+        "geometry": {
+          "coordinates": [
+            -117.98258098167369,
+            33.773621321773035
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "K-Food": "Dada Shabu Shabu",
+          "Best Menu": "All You Can Eat!",
+          "color": "red",
+          "region": "OC"
+        },
+        "geometry": {
+          "coordinates": [
+            -117.75925427116385,
+            33.71151531176062
+          ],
+          "type": "Point"
+        },
+        "id": 1
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "K-Food": "Hangari Kalguksoo",
+          "Best Menu": "Bossam",
+          "color": "red",
+          "region": "LA"
+        },
+        "geometry": {
+          "coordinates": [
+            -118.2976662711643,
+            34.06301544400351
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "K-Food": "Soowon Galbi",
+          "Best Menu": "Galbi and Cold Noodle",
+          "color": "red",
+          "region": "LA"
+        },
+        "geometry": {
+          "coordinates": [
+            -118.2913694576719,
+            34.0564842217281
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }

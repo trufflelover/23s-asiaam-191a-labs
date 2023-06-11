@@ -1,0 +1,137 @@
+/* font size */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* svg colors*/
+.LAmarker path, .LA {
+    fill: rgb(138, 6, 238);
+    background-color:rgb(138, 6, 238);
+  }
+.OCmarker path, .OC {
+    fill: rgb(246, 130, 6);
+    background-color: rgb(246, 130, 6);
+  }
+button{
+        background-color: #6c4bf1; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        margin: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+}
+
+/* body template */
+body{
+    display: grid;
+    /* grid-template-columns: 1fr;  */
+    grid-auto-rows: auto 1fr;
+    grid-template-areas: "header" "main_content" "footer";
+    background-color: rgb(244, 248, 248);
+    font-family: 'Montserrat', sans-serif;
+    /* height: 100vh; */
+}
+/* header */
+header{
+    grid-area: header;
+
+        padding: 20px;
+        text-align: center;
+        background: #b4e9e9;
+        border-radius: 5px;
+        color: white;
+        font-size: 30px;
+
+      
+}
+#text
+{padding-bottom: 2em;}
+
+/* image adjustment */
+.image img {
+	max-width: 50%;
+	height: auto;
+	padding: 20px;
+  }
+
+#footer{
+    grid-area: footer;
+}
+
+.main{
+    grid-area: main_content;
+    grid-template-areas: "content" "main_map";
+    display: grid; 
+}
+
+#contents{
+    grid-area: content;
+}
+
+#the_map{
+    height:80vh;
+    grid-area: main_map;
+}
+/* navigation bar */
+.links {
+	background-color: #123;
+	background-image: linear-gradient(to bottom, #0003, transparent);
+	border-bottom: 1px solid #0003;
+	box-shadow: 0 0 32px #0003;
+	font-weight: 300;
+}
+.links > a {
+	color: #9ab;
+	padding: .75em;
+	text-align: center;
+	text-decoration: none;
+	transition: all .5s;
+}
+.links > a:hover {
+	background: #d085149c;
+	color: #adf;
+}
+.links > .line {
+	background: #68a;
+	height: 1px;
+	pointer-events: none;
+}
+
+/* The Magic */
+.links {
+	display: grid;
+	grid-template-columns: repeat(var(--items), 1fr);
+	position: relative;
+    justify-items: center;
+}
+.links > .line {
+	opacity: 0;
+	transition: all .5s;
+    position: absolute;
+	bottom: 0;
+	left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+	width: var(--width, calc(100% / var(--items)));
+	--index: 0;
+}
+.links > a:hover ~ .line {
+	opacity: 1;
+}
+
+th {
+	border: 0px solid #ddd;
+	padding: 3px;
+  }
+  
+ tr:nth-child(even){background-color: #f2f2f2;}
+  
+ tr:hover {background-color: #ddd;}
+  
+th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #a7d09b;
+	color: white;
+  }
