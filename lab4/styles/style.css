@@ -1,0 +1,48 @@
+body{
+    display: grid;
+    grid-auto-rows: auto 1fr;
+    grid-template-areas: "header" "main_content" "footer";
+    background: linear-gradient(to right, 
+        #FFB3BA,  /* Pink */
+        #FFDFBA,  /* Peach */
+        #FFFFBA,  /* Yellow */
+        #BAFFC9,  /* Mint */
+        #BAE1FF   /* Sky Blue */
+    );
+    /* background-color: rgb(175, 233, 233); */
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;  /* Your defined height here */
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;  /* Adjust padding as needed */
+    font-size: 3em;  /* Make the font bigger. Adjust size as needed */
+    font-family: 'Roboto', sans-serif;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+.main{
+    grid-area: main_content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main_map content";
+    display: grid;
+}
+
+
+
+
+#the_map{
+    height:80vh;
+    grid-area: main_map;
+}
