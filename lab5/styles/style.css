@@ -15,7 +15,8 @@ body{
 
 header {
     grid-area: header;
-    display: flex;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
     justify-content: center;
     align-items: center;
     height: 100px;  /* Your defined height here */
@@ -38,23 +39,35 @@ header {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "main_map content";
     display: grid;
+    gap: 10px;
 }
 
 
 #the_map{
     height:80vh;
     grid-area: main_map;
+    zoom: 6;
+    border: 2px solid;
+    border-radius: 10px;
+  
+}
+
+#contents{
+  grid-area: content;
 }
 
 #placeForButtons{
-    grid-area: buttonHome;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 5px;
     row-gap: 5px
 }
 
-
+#survey{
+  display:grid;
+  height: 80vh;
+  overflow-x: none;
+}
 
 
 
@@ -98,4 +111,8 @@ header {
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
+}
+#toggleBtn{
+  color: rgba(246, 245, 245, 0.65);
+  background-color: #0a0af7;
 }

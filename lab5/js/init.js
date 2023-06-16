@@ -1,5 +1,5 @@
 // declare variables
-let mapOptions = {'center': [34.0709,-118.444],'zoom':5}
+let mapOptions = {'center': [34.0709,-118.444],'zoom':16}
 
 // use the variables
 const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
@@ -16,16 +16,25 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 //     return message
 // }
 
+let allTheMakers = L.featureGroup();
 
 function addMarker(data){
     const title = data["What is the name of the place?"];
     const lat = parseFloat(data["lat"]);
     const lng = parseFloat(data["lng"]);
-    const bestMenu = data["What is the best menu?"];
-    const shoutout = data["(optional) What is your name? Could be nick name or any name you want to be called. You will get a shoutout on the map  ex) \"Approved by Stephanie\""];
+    const bestMenu = "<h3>Best Menu</h3>: "+data["What is the best menu?"];
+    const shoutout = data.shoutout;
     const message = bestMenu + (shoutout ? "<br>Recommended by " + shoutout : "");
-    L.marker([lat,lng]).addTo(map).bindPopup(`<h2>${title}</h2> <p>${message}</p>`)
+    console.log(shoutout)
+
+    let thisMarker = L.marker([lat,lng]).addTo(map).bindPopup(`<h2>${title}</h2> <p>${message}</p>`)
     createButtons(lat, lng, title);
+
+    // if it is in the west coast (-100), add it to the map (sorry korea!)
+    if (lng <= -100) {
+        allTheMakers.addLayer(thisMarker); // adding the marker to the feature group/layer
+    }
+
     return message;
 }
 
@@ -54,10 +63,14 @@ function loadData(url){
 
 function processData(results){
     console.log(results)
+    // loop through the data and add a marker `.forEach` data
     results.data.forEach(data => {
         console.log(data)
         addMarker(data)
     })
+
+    // we then get the bounds of all the markers
+    map.fitBounds(allTheMakers.getBounds())
 }
 
 function toggleIframe() {
@@ -66,10 +79,17 @@ function toggleIframe() {
     if (contents.style.display === "none") {
       contents.style.display = "block";
       main.style.gridTemplateColumns = "1fr 1fr";
+      // you needed to hide the buttons div when you click it 
+      let theButtonsDiv = document.getElementById("placeForButtons"); // get the div that holds the buttons
+      theButtonsDiv.style.display = "none"; // hide the div that holds the buttons
       map.invalidateSize();
     } else {
-      contents.style.display = "none";
-      main.style.gridTemplateColumns = "1fr";
+      let theButtonsDiv = document.getElementById("placeForButtons"); // get the div that holds the buttons
+      theButtonsDiv.style.display = "grid"; // bring back the grid that holds the buttons
+      let theSurveyDiv = document.getElementById("survey"); // get the div that holds the survey
+      theSurveyDiv.style.display = "none"; // hide the div that holds the survey
+
+      main.style.gridTemplateColumns = "1fr"; // change the grid to one column
       map.invalidateSize();
     }
   
