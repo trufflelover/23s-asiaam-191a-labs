@@ -46,7 +46,6 @@ header {
 #the_map{
     height:80vh;
     grid-area: main_map;
-    zoom: 6;
     border: 2px solid;
     border-radius: 10px;
   
