@@ -1,0 +1,122 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@500&display=swap');
+
+body{
+    display: grid;
+    grid-template-rows: 100px 90% 5%;
+    /* grid-auto-rows: auto 1fr; */
+    grid-template-areas: "header" "main_content" "footer";
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, 
+        #FFB3BA,  /* Pink */
+        #FFDFBA,  /* Peach */
+        #FFFFBA,  /* Yellow */
+        #BAFFC9,  /* Mint */
+        #BAE1FF   /* Sky Blue */
+    );
+    /* background-color: rgb(175, 233, 233); */
+}
+
+header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100px;  /* Your defined height here */
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    padding: 20px 0;  /* Adjust padding as needed */
+    font-size: 3em;  /* Make the font bigger. Adjust size as needed */
+    font-family: 'Indie Flower', cursive;
+
+}
+
+#footer{
+    grid-area: footer;
+}
+
+.main{
+    grid-area: main_content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main_map content";
+    display: grid;
+    gap: 10px;
+}
+
+
+#the_map{
+    height:80vh;
+    grid-area: main_map;
+    border: 2px solid;
+    border-radius: 10px;
+  
+}
+
+#contents{
+  grid-area: content;
+}
+
+#placeForButtons{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5px;
+    row-gap: 5px
+}
+
+#survey{
+  display:grid;
+  height: 80vh;
+  overflow-x: none;
+}
+
+
+
+/* CSS */
+.coolButtons {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  min-height: 3rem;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+.coolButtons:hover,
+.coolButtons:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.coolButtons:hover {
+  transform: translateY(-1px);
+}
+
+.coolButtons:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+#toggleBtn{
+  color: rgba(246, 245, 245, 0.65);
+  background-color: #0a0af7;
+}
